@@ -14,6 +14,8 @@ type Args = {|
   subject: Rect,
   center: Position,
   shouldUseTimeDampening: boolean,
+  isVerticalAutoScrollDisabled?: boolean,
+  isHorizontalAutoScrollDisabled?: boolean,
 |};
 
 export default ({
@@ -22,6 +24,8 @@ export default ({
   subject,
   center,
   shouldUseTimeDampening,
+  isVerticalAutoScrollDisabled,
+  isHorizontalAutoScrollDisabled,
 }: Args): ?Position => {
   // get distance to each edge
   const distanceToEdges: Spacing = {
@@ -45,6 +49,7 @@ export default ({
     dragStartTime,
     axis: vertical,
     shouldUseTimeDampening,
+    isScrollDisabled: isVerticalAutoScrollDisabled,
   });
   const x: number = getScrollOnAxis({
     container,
@@ -52,6 +57,7 @@ export default ({
     dragStartTime,
     axis: horizontal,
     shouldUseTimeDampening,
+    isScrollDisabled: isHorizontalAutoScrollDisabled,
   });
 
   const required: Position = clean({ x, y });

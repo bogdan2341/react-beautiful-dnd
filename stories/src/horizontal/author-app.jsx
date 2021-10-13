@@ -13,6 +13,7 @@ type Props = {|
   initial: Quote[],
   internalScroll?: boolean,
   isCombineEnabled?: boolean,
+  isVerticalScrollDisabled?: boolean,
 |};
 
 type State = {|
@@ -66,7 +67,7 @@ export default class AuthorApp extends Component<Props, State> {
 
   render() {
     return (
-      <DragDropContext onDragEnd={this.onDragEnd}>
+      <DragDropContext onDragEnd={this.onDragEnd} isVerticalAutoScrollDisabled={this.props.isVerticalScrollDisabled}>
         <Root>
           <AuthorList
             listId="AUTHOR"

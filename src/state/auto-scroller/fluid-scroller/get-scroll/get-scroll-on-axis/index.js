@@ -12,6 +12,7 @@ type GetOnAxisArgs = {|
   dragStartTime: number,
   axis: Axis,
   shouldUseTimeDampening: boolean,
+  isScrollDisabled?: boolean,
 |};
 
 export default ({
@@ -20,7 +21,12 @@ export default ({
   dragStartTime,
   axis,
   shouldUseTimeDampening,
+  isScrollDisabled,
 }: GetOnAxisArgs): number => {
+  if (isScrollDisabled) {
+    return 0;
+  }
+
   const thresholds: DistanceThresholds = getDistanceThresholds(container, axis);
   const isCloserToEnd: boolean =
     distanceToEdges[axis.end] < distanceToEdges[axis.start];

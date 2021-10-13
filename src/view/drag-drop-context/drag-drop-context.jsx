@@ -21,7 +21,8 @@ type Props = {|
   // See our [sensor api](/docs/sensors/sensor-api.md)
   sensors?: Sensor[],
   enableDefaultSensors?: ?boolean,
-  isAutoScrollDisabled?: boolean,
+  isVerticalAutoScrollDisabled?: boolean,
+  isHorizontalAutoScrollDisabled?: boolean,
 |};
 
 // Reset any context that gets persisted across server side renders
@@ -52,7 +53,8 @@ export default function DragDropContext(props: Props) {
           onDragStart={props.onDragStart}
           onDragUpdate={props.onDragUpdate}
           onDragEnd={props.onDragEnd}
-          isAutoScrollDisabled={props.isAutoScrollDisabled}
+          isVerticalAutoScrollDisabled={props.isVerticalAutoScrollDisabled}
+          isHorizontalAutoScrollDisabled={props.isHorizontalAutoScrollDisabled}
         >
           {props.children}
         </App>

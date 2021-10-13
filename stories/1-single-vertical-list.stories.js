@@ -29,6 +29,9 @@ const Title = styled.h4`
 
 storiesOf('single vertical list', module)
   .add('basic', () => <QuoteApp initial={data.small} />)
+  .add('without vertical scroll', () => (
+    <QuoteApp initial={data.small} isVerticalScrollDisabled />
+  ))
   .add('large data set', () => <QuoteApp initial={data.large} />)
   .add('Droppable is a scroll container', () => (
     <QuoteApp

@@ -20,6 +20,7 @@ type Props = {|
   initial: Quote[],
   isCombineEnabled?: boolean,
   listStyle?: Object,
+  isVerticalScrollDisabled?: boolean,
 |};
 
 export default function QuoteApp(props: Props) {
@@ -65,7 +66,7 @@ export default function QuoteApp(props: Props) {
     <DragDropContext
       onDragStart={onDragStart}
       onDragEnd={onDragEnd}
-      isAutoScrollDisabled
+      isVerticalAutoScrollDisabled={props.isVerticalScrollDisabled}
     >
       <Root>
         <QuoteList

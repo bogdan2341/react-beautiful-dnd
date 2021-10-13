@@ -24,4 +24,9 @@ storiesOf('single horizontal list', module)
     <WideWindow>
       <AuthorApp initial={bigData} internalScroll />
     </WideWindow>
+  ))
+  .add('with disabled vertical scroll and with overflow scroll', () => (
+    <WideWindow>
+      <AuthorApp initial={bigData} internalScroll isVerticalScrollDisabled />
+    </WideWindow>
   ));

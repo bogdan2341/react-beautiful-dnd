@@ -18,6 +18,8 @@ type Args = {|
   shouldUseTimeDampening: boolean,
   scrollWindow: (scroll: Position) => void,
   scrollDroppable: (id: DroppableId, scroll: Position) => void,
+  isVerticalAutoScrollDisabled?: boolean,
+  isHorizontalAutoScrollDisabled?: boolean,
 |};
 
 export default ({
@@ -26,6 +28,8 @@ export default ({
   shouldUseTimeDampening,
   scrollWindow,
   scrollDroppable,
+  isVerticalAutoScrollDisabled,
+  isHorizontalAutoScrollDisabled,
 }: Args): void => {
   const center: Position = state.current.page.borderBoxCenter;
   const draggable: DraggableDimension =
@@ -40,6 +44,8 @@ export default ({
       subject,
       center,
       shouldUseTimeDampening,
+      isVerticalAutoScrollDisabled,
+      isHorizontalAutoScrollDisabled,
     });
 
     if (change) {
