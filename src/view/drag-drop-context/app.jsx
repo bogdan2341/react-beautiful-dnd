@@ -159,6 +159,7 @@ export default function App(props: Props) {
       dimensionMarshal.scrollDroppable,
       lazyDispatch,
       isVerticalAutoScrollDisabled,
+      isHorizontalAutoScrollDisabled,
     ],
   );
 

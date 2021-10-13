@@ -48,6 +48,8 @@ export default ({
       isHorizontalAutoScrollDisabled,
     });
 
+    console.log(change);
+
     if (change) {
       scrollWindow(change);
       return;
@@ -71,6 +73,8 @@ export default ({
     center,
     shouldUseTimeDampening,
   });
+
+  console.log(change);
 
   if (change) {
     scrollDroppable(droppable.descriptor.id, change);
