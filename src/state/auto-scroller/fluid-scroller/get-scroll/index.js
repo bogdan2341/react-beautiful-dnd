@@ -60,6 +60,8 @@ export default ({
     isScrollDisabled: isHorizontalAutoScrollDisabled,
   });
 
+  console.log(x, y);
+
   const required: Position = clean({ x, y });
 
   // nothing required
@@ -73,6 +75,8 @@ export default ({
     subject,
     proposedScroll: required,
   });
+
+  console.log(container, subject);
 
   if (!limited) {
     return null;

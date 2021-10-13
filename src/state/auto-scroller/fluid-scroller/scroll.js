@@ -76,6 +76,8 @@ export default ({
     isHorizontalAutoScrollDisabled,
   });
 
+  console.log(isVerticalAutoScrollDisabled, isHorizontalAutoScrollDisabled);
+
   console.log(change);
 
   if (change) {
