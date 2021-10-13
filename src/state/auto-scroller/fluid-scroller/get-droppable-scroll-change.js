@@ -10,6 +10,8 @@ type Args = {|
   center: Position,
   dragStartTime: number,
   shouldUseTimeDampening: boolean,
+  isVerticalAutoScrollDisabled?: boolean,
+  isHorizontalAutoScrollDisabled?: boolean,
 |};
 
 export default ({
@@ -18,6 +20,8 @@ export default ({
   center,
   dragStartTime,
   shouldUseTimeDampening,
+  isVerticalAutoScrollDisabled,
+  isHorizontalAutoScrollDisabled,
 }: Args): ?Position => {
   // We know this has a closestScrollable
   const frame: ?Scrollable = droppable.frame;
@@ -33,6 +37,8 @@ export default ({
     subject,
     center,
     shouldUseTimeDampening,
+    isVerticalAutoScrollDisabled,
+    isHorizontalAutoScrollDisabled,
   });
 
   return scroll && canScrollDroppable(droppable, scroll) ? scroll : null;

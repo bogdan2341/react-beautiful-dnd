@@ -72,6 +72,8 @@ export default ({
     subject,
     center,
     shouldUseTimeDampening,
+    isVerticalAutoScrollDisabled,
+    isHorizontalAutoScrollDisabled,
   });
 
   console.log(change);
