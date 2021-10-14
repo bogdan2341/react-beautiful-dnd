@@ -31,9 +31,6 @@ export default ({
   isVerticalAutoScrollDisabled,
   isHorizontalAutoScrollDisabled,
 }: Args): void => {
-
-  console.log(isVerticalAutoScrollDisabled, isHorizontalAutoScrollDisabled);
-
   const center: Position = state.current.page.borderBoxCenter;
   const draggable: DraggableDimension =
     state.dimensions.draggables[state.critical.draggable.id];
@@ -50,8 +47,6 @@ export default ({
       isVerticalAutoScrollDisabled,
       isHorizontalAutoScrollDisabled,
     });
-
-    console.log('isWindowScrollAllowed', change);
 
     if (change) {
       scrollWindow(change);
@@ -78,10 +73,6 @@ export default ({
     isVerticalAutoScrollDisabled,
     isHorizontalAutoScrollDisabled,
   });
-
-  console.log(isVerticalAutoScrollDisabled, isHorizontalAutoScrollDisabled);
-
-  console.log('getDroppableScrollChange', change);
 
   if (change) {
     scrollDroppable(droppable.descriptor.id, change);
